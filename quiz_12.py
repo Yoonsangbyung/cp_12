@@ -1,25 +1,22 @@
-class 붕어빵_클래스:
-    총_판매_가격 = 0
-    def __init__(self, 요소, 가격):
-        self.요소 = 요소
-        self.가격 = 가격
+class BungeoBbang:
+    def __init__(self, contents, price):
+        self.contents = contents
+        self.price = price
+        self.total_sales = 0
 
     def sell(self):
-        print(f"{self.요소} 붕어빵이 {self.가격}원에 판매되었습니다.")
-        붕어빵_클래스.총_판매_가격 += self.가격
+        self.total_sales += self.price
+        print(f"{self.contents} 붕어빵이 {self.price}원에 판매되었습니다")
+
 
     def eat(self):
-        print(f"{self.요소} 붕어빵을 먹었습니다.")
+        print(f"{self.contents} 붕어빵을 먹었습니다.")
 
-슈크림_붕어빵 = 붕어빵_클래스("슈크림", 500)
-팥_붕어빵 = 붕어빵_클래스("팥", 500)
-피자_붕어빵 = 붕어빵_클래스("피자", 1000)
-고구마_붕어빵 = 붕어빵_클래스("고구마", 5000)
-김치_붕어빵 = 붕어빵_클래스("김치", 6000)
 
-슈크림_붕어빵.sell()
-고구마_붕어빵.sell()
-피자_붕어빵.eat()
-김치_붕어빵.eat()
-print(f"총 판매금: {붕어빵_클래스.총_판매_가격}원")
+shu_bun = BungeoBbang("슈크림",2000)
+shu_bun.sell()
+print(f"총 판매금: {shu_bun.total_sales}원")
 
+pat_bun = BungeoBbang("팥", 1000)
+pat_bun.sell()
+print(f"총 판매금: {pat_bun.total_sales}원")
